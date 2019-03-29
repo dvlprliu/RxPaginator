@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# RxPaginator
-=======
 # RxPaginator
 
 [![CI Status](https://img.shields.io/travis/dvlprliu/RxPaginator.svg?style=flat)](https://travis-ci.org/dvlprliu/RxPaginator)
@@ -30,4 +27,3 @@ dvlprliu, dvlprliu@gmail.com
 ## License
 
 RxPaginator is available under the MIT license. See the LICENSE file for more info.
->>>>>>> Initial commit
