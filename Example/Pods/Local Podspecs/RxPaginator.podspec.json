@@ -1,0 +1,30 @@
+{
+  "name": "RxPaginator",
+  "version": "0.1.0",
+  "summary": "A short description of RxPaginator.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/dvlprliu/RxPaginator",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dvlprliu": "dvlprliu@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/dvlprliu/RxPaginator.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "RxPaginator/Classes/**/*",
+  "dependencies": {
+    "RxSwift": [
+
+    ],
+    "RxCocoa": [
+
+    ]
+  }
+}
