@@ -1,27 +1,15 @@
 //
-//  ListFetcher_.swift
-//  ETURecord
+//  GeneralListFetcher.swift
+//  RxPaginator
 //
-//  Created by zhzh liu on 2019/4/17.
-//  Copyright © 2019 ETUSchool. All rights reserved.
+//  Created by zhzh liu on 2019/4/18.
 //
 
 import Foundation
 import RxCocoa
 import RxSwift
 
-protocol ListFetcher_ {
-    associatedtype List: PaginatedList_
-    var refresh: AnyObserver<Void> { get }
-    var loadmore: AnyObserver<Void> { get }
-    
-    var list: Driver<List> { get }
-    var loading: Driver<Bool> { get }
-    var errors: Driver<Error> { get }
-    var current: List { get }
-}
-
-class GeneralListFetcher<List: PaginatedList_>: ListFetcher_ {
+class GeneralListFetcher<List: PaginatedList>: ListFetcherProtocol {
     typealias P = List.P
     // interactions
     let refresh: AnyObserver<Void>
