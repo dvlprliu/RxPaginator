@@ -24,6 +24,10 @@ extension ObservableType {
             .filter { _, predicate in !predicate }
             .map { element, _ in element }
     }
+    
+    func unwrap<T>() -> Observable<T> where E == T? {
+        return filter { $0 != nil }.map { $0! }
+    }
 }
 
 extension SharedSequence {
@@ -41,4 +45,5 @@ extension SharedSequence {
     }
     
 }
+
 

@@ -1,26 +1,37 @@
 //
 //  Page.swift
-//  RxPaginator
+//  ETURecord
 //
-//  Created by zhzh liu on 3/29/19.
+//  Created by zhzh liu on 4/16/19.
+//  Copyright © 2019 ETUSchool. All rights reserved.
 //
 
 import Foundation
 
-public struct Page {
-    let page: Int
-    let size: Int
+struct Page {
+    let num: Int
     
-    init(page: Int = 1, size: Int = 10) {
-        self.page = page
-        self.size = size
+    init(page: Int = 0) {
+        self.num = page
+    }
+    
+}
+
+extension Page: Paginator {
+    
+    static var initial: Page {
+        return Page(page: 1)
     }
     
     func first() -> Page {
-        return Page(page: 1, size: size)
+        return Page(page: 1)
     }
     
     func next() -> Page {
-        return Page(page: page + 1, size: size)
+        return Page(page: num + 1)
+    }
+    
+    func previous() -> Page {
+        return Page(page: num - 1)
     }
 }
