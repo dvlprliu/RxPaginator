@@ -1,3 +1,4 @@
+platform :ios, "9.3"
 use_frameworks!
 
 target 'RxPaginator_Example' do
@@ -5,5 +6,6 @@ target 'RxPaginator_Example' do
 
   target 'RxPaginator_Tests' do
     inherit! :search_paths
+    pod 'RxTest'
   end
 end

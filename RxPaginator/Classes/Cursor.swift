@@ -44,3 +44,20 @@ extension Cursor: Paginator {
         )
     }
 }
+
+extension Cursor: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(minPosition)
+        hasher.combine(maxPosition)
+    }
+
+    public static func ==(lhs: Cursor, rhs: Cursor) -> Bool {
+        if lhs.minPosition != rhs.minPosition {
+            return false
+        }
+        if lhs.maxPosition != rhs.maxPosition {
+            return false
+        }
+        return true
+    }
+}

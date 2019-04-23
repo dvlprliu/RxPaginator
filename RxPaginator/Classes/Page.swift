@@ -10,9 +10,9 @@ import Foundation
 
 struct Page {
     let num: Int
-    
-    init(page: Int = 0) {
-        self.num = page
+
+    init(num: Int = 0) {
+        self.num = num
     }
     
 }
@@ -20,18 +20,24 @@ struct Page {
 extension Page: Paginator {
     
     static var initial: Page {
-        return Page(page: 1)
+        return Page(num: 1)
     }
     
     func first() -> Page {
-        return Page(page: 1)
+        return Page(num: 1)
     }
     
     func next() -> Page {
-        return Page(page: num + 1)
+        return Page(num: num + 1)
     }
     
     func previous() -> Page {
-        return Page(page: num - 1)
+        return Page(num: num - 1)
+    }
+}
+
+extension Page: Equatable {
+    static func ==(lhs: Page, rhs: Page) -> Bool {
+        return lhs.num == rhs.num
     }
 }
