@@ -53,7 +53,6 @@
 		9CEBB50855DEDD72D2AA5FD8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		AF7A1123CA3AAE0B172CC8F7 /* ListTestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTestsHelper.swift; sourceTree = "<group>"; };
 		AF7A1513E5363C014B6BEBB0 /* PageNumListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumListTests.swift; sourceTree = "<group>"; };
-		AF7A161A006B88EB948A81AB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		AF7A16EC8A3B43166F6BC7F7 /* PageNumListFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNumListFetcherTests.swift; sourceTree = "<group>"; };
 		AF7A17C0F97B9A7C9966BE81 /* CursorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorTests.swift; sourceTree = "<group>"; };
 		AF7A19215848D8284FEBF231 /* PageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTests.swift; sourceTree = "<group>"; };
@@ -89,12 +88,12 @@
 				AF7A1AD77AD19FB829C1DF96 /* Models */,
 				AF7A1F1D7B2AD87BCB4EB318 /* CursoredListTests.swift */,
 				AF7A141276CF22BD926EE13F /* Helper */,
-				AF7A13B43139B587F3DD9039 /* Supporting Files */,
 				AF7A17C0F97B9A7C9966BE81 /* CursorTests.swift */,
 				AF7A19215848D8284FEBF231 /* PageTests.swift */,
 				AF7A16EC8A3B43166F6BC7F7 /* PageNumListFetcherTests.swift */,
 			);
-			path = RxPaginator_Tests;
+			name = RxPaginator_Tests;
+			path = ../Tests;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -185,14 +184,6 @@
 				8ADD3C0238A77396E66B5E8D /* Pods_RxPaginator_Tests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AF7A13B43139B587F3DD9039 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AF7A161A006B88EB948A81AB /* Info.plist */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		AF7A141276CF22BD926EE13F /* Helper */ = {
@@ -327,14 +318,12 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxPaginator/RxPaginator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxPaginator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

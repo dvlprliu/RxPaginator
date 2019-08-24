@@ -55,7 +55,7 @@ class PageNumListFetcherTests: XCTestCase {
                 .drive(observer)
                 .disposed(by: disposeBag!)
 
-        let res = scheduler.start {
+        _ = scheduler.start {
             loadMoreEvents.asObservable()
         }
 
@@ -74,7 +74,6 @@ class PageNumListFetcherTests: XCTestCase {
 
         XCTAssertEqual(observer.events, correctValues)
     }
-
 }
 
 class PageNumListGenerator {

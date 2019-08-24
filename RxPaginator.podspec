@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'RxPaginator'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of RxPaginator.'
+  s.summary          = 'Paginating made easy'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,27 +18,24 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  A paginator implemented using RxSwift
                        DESC
 
   s.homepage         = 'https://github.com/dvlprliu/RxPaginator'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dvlprliu' => 'dvlprliu@gmail.com' }
   s.source           = { :git => 'https://github.com/dvlprliu/RxPaginator.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'RxPaginator/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'RxPaginator' => ['RxPaginator/Assets/*.png']
-  # }
+  s.source_files = 'RxPaginator/Classes/**/*.{swift}'
+  s.swift_versions = ['5.0']
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'RxSwift'
-  s.dependency 'RxCocoa'
-  s.dependency 'SwiftyJSON'
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/**/*.{swift}'
+    test_spec.dependency 'RxTest' # This dependency will only be linked with your tests.
+  end
+
+  s.dependency 'RxSwift', '~> 4.5'
+  s.dependency 'RxCocoa', '~> 4.5'
 end

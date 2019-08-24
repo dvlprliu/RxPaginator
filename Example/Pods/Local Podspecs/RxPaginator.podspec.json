@@ -1,8 +1,8 @@
 {
   "name": "RxPaginator",
   "version": "0.1.0",
-  "summary": "A short description of RxPaginator.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "A paginator implemented using RxSwift",
+  "description": "A paginator implemented using RxSwift",
   "homepage": "https://github.com/dvlprliu/RxPaginator",
   "license": {
     "type": "MIT",
@@ -18,16 +18,17 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "RxPaginator/Classes/**/*",
+  "source_files": "RxPaginator/Classes/**/*.{swift}",
+  "swift_versions": [
+    "5.0"
+  ],
   "dependencies": {
     "RxSwift": [
-
+      "~> 4.5"
     ],
     "RxCocoa": [
-
-    ],
-    "SwiftyJSON": [
-
+      "~> 4.5"
     ]
-  }
+  },
+  "swift_version": "5.0"
 }
