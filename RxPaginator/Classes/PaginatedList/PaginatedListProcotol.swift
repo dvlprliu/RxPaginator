@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PaginatedList {
+public protocol PaginatedListProcotol {
     associatedtype Element
     associatedtype P: Paginator
     var hasMore: Bool { get set }

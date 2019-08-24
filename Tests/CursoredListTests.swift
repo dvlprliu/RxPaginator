@@ -17,7 +17,7 @@ class CursoredListTests: XCTestCase {
 
     func test_Initialize() {
         let cursor = Cursor(minPosition: "asdf", maxPosition: "qwer")
-        let list = GeneralPagedList(
+        let list = PagedList(
                 hasMore: true,
                 elements: [TestModel](),
                 paginator: cursor
@@ -29,7 +29,7 @@ class CursoredListTests: XCTestCase {
     }
 
     func test_Empty() {
-        let emptyList = GeneralPagedList<TestModel, Cursor>.empty()
+        let emptyList = PagedList<TestModel, Cursor>.empty()
         XCTAssertTrue(emptyList.hasMore)
         XCTAssertTrue(emptyList.elements.isEmpty)
         XCTAssertNil(emptyList.paginator.minPosition)
@@ -39,7 +39,7 @@ class CursoredListTests: XCTestCase {
     func test_Reduce() {
         let fstPage = Cursor(minPosition: nil, maxPosition: nil)
         let fstElements = ListTestsHelper.models(count: 10)
-        let fstList = GeneralPagedList(
+        let fstList = PagedList(
                 hasMore: true,
                 elements: fstElements,
                 paginator: fstPage
@@ -47,13 +47,13 @@ class CursoredListTests: XCTestCase {
 
         let sndPage = Cursor(minPosition: "asdf", maxPosition: "qwer")
         let sndElements = ListTestsHelper.models(count: 10)
-        let sndList = GeneralPagedList(
+        let sndList = PagedList(
                 hasMore: false,
                 elements: sndElements,
                 paginator: sndPage
         )
 
-        let reducedList = GeneralPagedList<TestModel, Cursor>.reduce(old: fstList, new: sndList)
+        let reducedList = PagedList<TestModel, Cursor>.reduce(old: fstList, new: sndList)
 
         XCTAssertFalse(reducedList.hasMore)
         XCTAssertEqual(reducedList.elements, fstElements + sndElements)

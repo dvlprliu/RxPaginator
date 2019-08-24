@@ -8,36 +8,36 @@
 
 import Foundation
 
-struct Cursor {
-    let minPosition: String?
-    let maxPosition: String?
+public struct Cursor {
+    public let minPosition: String?
+    public let maxPosition: String?
     
-    init(minPosition: String?, maxPosition: String?) {
+    public init(minPosition: String?, maxPosition: String?) {
         self.minPosition = minPosition
         self.maxPosition = maxPosition
     }
 }
 
 extension Cursor: Paginator {
-    static var initial: Cursor {
+    public static var initial: Cursor {
         return Cursor(minPosition: nil, maxPosition: nil)
     }
     
-    func first() -> Cursor {
+    public func first() -> Cursor {
         return Cursor(
             minPosition: nil,
             maxPosition: nil
         )
     }
     
-    func next() -> Cursor {
+    public func next() -> Cursor {
         return Cursor(
             minPosition: self.maxPosition,
             maxPosition: self.maxPosition
         )
     }
     
-    func previous() -> Cursor {
+    public func previous() -> Cursor {
         return Cursor(
             minPosition: self.minPosition,
             maxPosition: self.minPosition

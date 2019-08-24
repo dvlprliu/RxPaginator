@@ -8,36 +8,35 @@
 
 import Foundation
 
-struct Page {
-    let num: Int
+public struct Page {
+    public let num: Int
 
-    init(num: Int = 0) {
+    public init(num: Int = 0) {
         self.num = num
     }
-    
 }
 
 extension Page: Paginator {
     
-    static var initial: Page {
+    public static var initial: Page {
         return Page(num: 1)
     }
     
-    func first() -> Page {
+    public func first() -> Page {
         return Page(num: 1)
     }
     
-    func next() -> Page {
+    public func next() -> Page {
         return Page(num: num + 1)
     }
     
-    func previous() -> Page {
+    public func previous() -> Page {
         return Page(num: num - 1)
     }
 }
 
 extension Page: Equatable {
-    static func ==(lhs: Page, rhs: Page) -> Bool {
+    public static func ==(lhs: Page, rhs: Page) -> Bool {
         return lhs.num == rhs.num
     }
 }

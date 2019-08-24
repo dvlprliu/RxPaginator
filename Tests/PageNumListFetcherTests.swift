@@ -9,18 +9,18 @@ import RxCocoa
 import RxTest
 @testable import RxPaginator
 
-typealias PageNumList = GeneralPagedList<TestModel, Page>
+typealias PageNumList = PagedList<TestModel, Page>
 
 class PageNumListFetcherTests: XCTestCase {
 
     var disposeBag: DisposeBag?
-    var fetcher: GeneralListFetcher<PageNumList>!
+    var fetcher: ListFetcher<PageNumList>!
     var scheduler = TestScheduler(initialClock: 0)
     lazy var observer = self.scheduler.createObserver(PageNumList.self)
 
     override func setUp() {
         super.setUp()
-        fetcher = GeneralListFetcher<PageNumList> { (p: Page) -> Observable<PageNumList> in
+        fetcher = ListFetcher<PageNumList> { (p: Page) -> Observable<PageNumList> in
             return .just(PageNumListGenerator.list(page: p.num, hasMore: p.num != 5, count: 1))
         }
         disposeBag = DisposeBag()

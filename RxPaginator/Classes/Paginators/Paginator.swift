@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Paginator {
+public protocol Paginator {
     static var initial: Self { get }
     func first() -> Self
     func next() -> Self

@@ -7,23 +7,23 @@
 
 import Foundation
 
-final class GeneralPagedList<E, P: Paginator>: PaginatedList {
-    var hasMore: Bool
-    var elements: [E]
-    var paginator: P
+public final class PagedList<E, P: Paginator>: PaginatedListProcotol {
+    public var hasMore: Bool
+    public var elements: [E]
+    public var paginator: P
 
-    init(hasMore: Bool, elements: [E], paginator: P) {
+    public init(hasMore: Bool, elements: [E], paginator: P) {
         self.hasMore = hasMore
         self.elements = elements
         self.paginator = paginator
     }
 
-    static func empty() -> GeneralPagedList {
-        return GeneralPagedList<E, P>(hasMore: true, elements: [], paginator: P.initial)
+    public static func empty() -> PagedList {
+        return PagedList<E, P>(hasMore: true, elements: [], paginator: P.initial)
     }
 
-    static func reduce(old list: GeneralPagedList<E, P>, new: GeneralPagedList<E, P>) -> GeneralPagedList {
-        return GeneralPagedList(
+    public static func reduce(old list: PagedList<E, P>, new: PagedList<E, P>) -> PagedList {
+        return PagedList(
                 hasMore: new.hasMore,
                 elements: list.elements + new.elements,
                 paginator: new.paginator
@@ -31,22 +31,22 @@ final class GeneralPagedList<E, P: Paginator>: PaginatedList {
     }
 }
 
-extension GeneralPagedList: Equatable where E: Equatable, P: Equatable {
-    static func ==(lhs: GeneralPagedList, rhs: GeneralPagedList) -> Bool {
+extension PagedList: Equatable where E: Equatable, P: Equatable {
+    public static func ==(lhs: PagedList, rhs: PagedList) -> Bool {
         return lhs.hasMore == rhs.hasMore &&
                 lhs.elements == rhs.elements &&
                 lhs.paginator == rhs.paginator
     }
 }
 
-extension GeneralPagedList: CustomStringConvertible {
+extension PagedList: CustomStringConvertible {
     public var description: String {
         return "GeneralPagedList(hasMore: \(hasMore), elements: \(elements), paginator: \(paginator))"
     }
 }
 
-extension GeneralPagedList: CustomDebugStringConvertible {
-    var debugDescription: String {
+extension PagedList: CustomDebugStringConvertible {
+    public var debugDescription: String {
         return "List: \r { hasMore: \(hasMore), \r elements: [\(elements)], \r paginator: { \(paginator) \r }"
     }
 }

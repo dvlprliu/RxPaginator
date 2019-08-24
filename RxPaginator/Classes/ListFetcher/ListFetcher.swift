@@ -9,28 +9,35 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class GeneralListFetcher<List: PaginatedList>: ListFetcherProtocol {
-    typealias P = List.P
+public class ListFetcher<List: PaginatedListProcotol>: ListFetcherProtocol {
+    public typealias P = List.P
     // interactions
-    let refresh: AnyObserver<Void>
-    let loadmore: AnyObserver<Void>
+    public let refresh: AnyObserver<Void>
+    public let loadmore: AnyObserver<Void>
     // states
-    let list: Driver<List>
-    let loading: Driver<Bool>
-    let errors: Driver<Error>
-    var current: List = List.empty()
+    public let list: Driver<List>
+    public let loading: Driver<Bool>
+    public let errors: Driver<Error>
+    public private(set) var current: List = List.empty()
     // private
     private let bag = DisposeBag()
 
-    init(request: @escaping (P) -> Observable<List>) {
+    public init(request: @escaping (P) -> Observable<List>) {
         let refreshSubject = PublishSubject<Void>()
         let loadMoreSubject = PublishSubject<Void>()
         let listSubject = BehaviorSubject<List>(value: List.empty())
         let activityIndicator = ActivityIndicator()
         let errorSubject = PublishSubject<Error>()
 
-        refresh = refreshSubject.asObserver()
-        loadmore = loadMoreSubject.asObserver()
+        refresh = AnyObserver { event in
+            guard case let .next(value) = event else { return }
+            refreshSubject.onNext(value)
+        }
+        loadmore = AnyObserver { event in
+            guard case let .next(value) = event else { return }
+            loadMoreSubject.onNext(value)
+        }
+
         list = listSubject.asDriver(onErrorDriveWith: .empty()).skip(1)
         loading = activityIndicator.asDriver()
         errors = errorSubject.asDriver(onErrorDriveWith: .empty())

@@ -17,7 +17,7 @@ class PageNumListTests: XCTestCase {
 
     func test_Initialize() {
         let page = Page(num: 0)
-        let list = GeneralPagedList(
+        let list = PagedList(
                 hasMore: true,
                 elements: [TestModel](),
                 paginator: page
@@ -28,7 +28,7 @@ class PageNumListTests: XCTestCase {
     }
 
     func test_Empty() {
-        let list = GeneralPagedList<TestModel, Page>.empty()
+        let list = PagedList<TestModel, Page>.empty()
         XCTAssertTrue(list.hasMore)
         XCTAssertTrue(list.elements.isEmpty)
         XCTAssertEqual(list.paginator.num, 1)
@@ -38,20 +38,20 @@ class PageNumListTests: XCTestCase {
         // Given
         let page1 = Page(num: 1)
         let page1Models = ListTestsHelper.models(count: 10)
-        let list1 = GeneralPagedList(
+        let list1 = PagedList(
                 hasMore: true,
                 elements: page1Models,
                 paginator: page1
         )
         let page2 = Page(num: 2)
         let page2Models = ListTestsHelper.models(count: 10)
-        let list2 = GeneralPagedList(
+        let list2 = PagedList(
                 hasMore: false,
                 elements: page2Models,
                 paginator: page2
         )
         // When
-        let reducedList = GeneralPagedList<TestModel, Page>.reduce(old: list1, new: list2)
+        let reducedList = PagedList<TestModel, Page>.reduce(old: list1, new: list2)
         // Then
         XCTAssertFalse(reducedList.hasMore)
         XCTAssertEqual(reducedList.elements.count, page1Models.count + page2Models.count)

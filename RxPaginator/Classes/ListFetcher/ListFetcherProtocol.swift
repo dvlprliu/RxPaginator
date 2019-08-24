@@ -10,8 +10,8 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-protocol ListFetcherProtocol {
-    associatedtype List: PaginatedList
+public protocol ListFetcherProtocol {
+    associatedtype List: PaginatedListProcotol
     var refresh: AnyObserver<Void> { get }
     var loadmore: AnyObserver<Void> { get }
     
