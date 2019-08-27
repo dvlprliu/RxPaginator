@@ -19,7 +19,7 @@ public final class PagedList<E, P: Paginator>: PaginatedListProcotol {
     }
 
     public static func empty() -> PagedList {
-        return PagedList<E, P>(hasMore: true, elements: [], paginator: P.initial)
+        return PagedList<E, P>(hasMore: false, elements: [], paginator: P.initial)
     }
 
     public static func reduce(old list: PagedList<E, P>, new: PagedList<E, P>) -> PagedList {

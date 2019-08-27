@@ -29,7 +29,7 @@ class PageNumListTests: XCTestCase {
 
     func test_Empty() {
         let list = PagedList<TestModel, Page>.empty()
-        XCTAssertTrue(list.hasMore)
+        XCTAssertFalse(list.hasMore)
         XCTAssertTrue(list.elements.isEmpty)
         XCTAssertEqual(list.paginator.num, 1)
     }

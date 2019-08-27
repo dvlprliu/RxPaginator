@@ -1,7 +1,7 @@
 {
   "name": "RxPaginator",
   "version": "0.1.0",
-  "summary": "A paginator implemented using RxSwift",
+  "summary": "Paginating made easy",
   "description": "A paginator implemented using RxSwift",
   "homepage": "https://github.com/dvlprliu/RxPaginator",
   "license": {
@@ -30,5 +30,17 @@
       "~> 4.5"
     ]
   },
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "Tests/**/*.{swift}",
+      "dependencies": {
+        "RxTest": [
+
+        ]
+      }
+    }
+  ],
   "swift_version": "5.0"
 }

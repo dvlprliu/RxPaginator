@@ -30,7 +30,7 @@ class CursoredListTests: XCTestCase {
 
     func test_Empty() {
         let emptyList = PagedList<TestModel, Cursor>.empty()
-        XCTAssertTrue(emptyList.hasMore)
+        XCTAssertFalse(emptyList.hasMore)
         XCTAssertTrue(emptyList.elements.isEmpty)
         XCTAssertNil(emptyList.paginator.minPosition)
         XCTAssertNil(emptyList.paginator.maxPosition)

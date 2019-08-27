@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
-  RxPaginator: ce2ddb1016b15d8c07c434e2bc1c6e8a6c0d2641
+  RxPaginator: 3412496ff44c4be8bfc3c02f3129f91ddd2ecf8f
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
 
