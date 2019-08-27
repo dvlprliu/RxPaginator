@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/dvlprliu/RxPaginator'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dvlprliu' => 'dvlprliu@gmail.com' }
-  s.source           = { :git => 'https://github.com/dvlprliu/RxPaginator.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@cichang8.com:magnet/ios/RxPaginator.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'RxPaginator/Classes/**/*.{swift}'
   s.swift_versions = ['5.0']
