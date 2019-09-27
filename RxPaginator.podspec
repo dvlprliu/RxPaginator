@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxPaginator'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Paginating made easy'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,7 @@ Pod::Spec.new do |s|
     test_spec.dependency 'RxTest' # This dependency will only be linked with your tests.
   end
 
-  s.dependency 'RxSwift', '~> 4.5'
-  s.dependency 'RxCocoa', '~> 4.5'
+  s.dependency 'RxSwift', '~> 5.0'
+  s.dependency 'RxCocoa', '~> 5.0'
+  s.dependency 'RxRelay', '~> 5.0'
 end

@@ -1,6 +1,6 @@
 {
   "name": "RxPaginator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "Paginating made easy",
   "description": "A paginator implemented using RxSwift",
   "homepage": "https://github.com/dvlprliu/RxPaginator",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/dvlprliu/RxPaginator.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "9.0"
@@ -24,10 +24,13 @@
   ],
   "dependencies": {
     "RxSwift": [
-      "~> 4.5"
+      "~> 5.0"
     ],
     "RxCocoa": [
-      "~> 4.5"
+      "~> 5.0"
+    ],
+    "RxRelay": [
+      "~> 5.0"
     ]
   },
   "testspecs": [
